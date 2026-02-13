@@ -8,15 +8,18 @@ export const IconInfo: FC = () => {
   const [name, _setName] = Retool.useStateString({
     name: 'name'
   })
+  // filename for background image
   const [filename, _setFileName] = Retool.useStateString({
     name: 'filename'
 
   })
+  // colour for circle
   const [circleColour, _setCircleColour] = Retool.useStateString({
     name: 'circle hex value',
     initialValue: "#ff4d4d"
 
   })
+  // text for inside circle
   const [count, _setCount] = Retool.useStateNumber({
     name: 'count',
     initialValue: 5
@@ -55,7 +58,7 @@ export const IconInfo: FC = () => {
             justifyContent: "center",
             position: "absolute",
             top: "0.2em",
-            right: "0.2em",                    // distance from top edge
+            right: "0.2em",                    
             zIndex: 20
           }}
         >
