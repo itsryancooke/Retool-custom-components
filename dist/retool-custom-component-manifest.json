@@ -1,0 +1,31 @@
+{
+  "customComponentSupportVersion": "2",
+  "components": {
+    "HelloWorld": {
+      "name": "Hello World",
+      "model": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "filename",
+          "type": "string"
+        },
+        {
+          "name": "circle hex value",
+          "initialValue": "#ff4d4d",
+          "type": "string"
+        },
+        {
+          "name": "count",
+          "initialValue": 5,
+          "type": "number"
+        }
+      ],
+      "events": [],
+      "defaultHeight": 5,
+      "defaultWidth": 2
+    }
+  }
+}
