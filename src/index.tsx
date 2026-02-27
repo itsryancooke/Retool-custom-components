@@ -24,10 +24,10 @@ export const ImageIcon: FC = () => {
     initialValue: 5
   })
   // Click Event
-  const onClick = Retool.useEventCallback({name: "click"})
+  const clickEvent = Retool.useEventCallback({name: "click"})
 
   return (
-    <div style={{
+    <div onClick = {() => clickEvent()} style={{
       overflow: "hidden",
       width: "100%",
       height: "100%",
@@ -39,7 +39,7 @@ export const ImageIcon: FC = () => {
         height: "100%",
         overflow: "hidden",
       }}>
-        <img src={filename} onClick={() => console.log("Image clicked!")} alt="Sample Image" style={{
+        <img src={filename}  alt="Sample Image" style={{
           position: "absolute",
           top: 0,
           left: 0,
