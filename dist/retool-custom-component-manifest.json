@@ -1,8 +1,8 @@
 {
   "customComponentSupportVersion": "2",
   "components": {
-    "HelloWorld": {
-      "name": "Hello World",
+    "ImageIcon": {
+      "name": "Image Icon",
       "model": [
         {
           "name": "name",
@@ -10,6 +10,7 @@
         },
         {
           "name": "filename",
+          "initialValue": "https://purepng.com/public/uploads/large/purepng.com-messages-iconsymbolsiconsapple-iosiosios-8-iconsios-8-721522596080zgne4.png",
           "type": "string"
         },
         {
@@ -23,7 +24,9 @@
           "type": "number"
         }
       ],
-      "events": [],
+      "events": [
+        "click"
+      ],
       "defaultHeight": 5,
       "defaultWidth": 2
     }
