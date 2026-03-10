@@ -26,55 +26,51 @@ export const ImageIcon: FC = () => {
   // Click Event
   const clickEvent = Retool.useEventCallback({name: "click"})
 
+  // Caps the upper dislay number at 99
+  var num = count > 99 ? "99+" : count
+  
+
+
   return (
-    <div onClick = {() => clickEvent()} style={{
+    <div onClick={() => clickEvent()} style={{
+      position: "relative",
+      height: "100%",        // stretches to container height
+      aspectRatio: "1 / 1", 
       overflow: "hidden",
-      width: "100%",
-      height: "100%",
-      alignItems: "center",
     }}>
       <div style={{
-        // Containing image to container
+        position: "absolute",
+        top: 0, left: 0, // defaults to left side
         width: "100%",
         height: "100%",
         overflow: "hidden",
       }}>
-        <img src={filename}  alt="Sample Image" style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
+        <img src={filename} alt="Sample Image" style={{
+          display: "block",
           width: "100%",
           height: "100%",
           objectFit: "contain",
-          overflow: "hidden",
-          zIndex: 10
-        }}></img>
-      
-        <div
-          style={{
-            width: "20%",
-            height: "30%",
-            borderRadius: "50%",
-            backgroundColor: circleColour,     // color of the circle
-            color: "white",                 // text color
-            fontWeight: "bold",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "absolute",
-            overflow: "hidden",
-            top: 0,
-            right: "10%",                    
-            zIndex: 20
-          }}>
-          <div style={{
-            aspectRatio: "1 / 1",
-            fontSize: "1.5em",
-          }}>
-            {count}
-          </div>
-        </div>
+        }} />
+
+      <div style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          zIndex: 20,
+          width: "25%",
+          aspectRatio: "1 / 1",
+          borderRadius: "50%",
+          backgroundColor: circleColour,
+          color: "white",
+          fontWeight: "bold",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "1rem",
+        }}>
+         {num}
       </div>
-    </div>
+  </div>
+</div>
   )
 }
