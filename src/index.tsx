@@ -19,17 +19,27 @@ export const ImageIcon: FC = () => {
     initialValue: "#ff4d4d"
 
   })
+  // Allocates location of circle to corner
+  const circlePosition = Retool.useStateEnumeration({ 
+    name: 'Circle Position',
+    initialValue: 'Right',
+    enumDefinition: ['Left', 'Right'],
+  })
+
   const [count, _setCount] = Retool.useStateNumber({
     name: 'count',
     initialValue: 5
   })
+
+
   // Click Event
   const clickEvent = Retool.useEventCallback({name: "click"})
 
   // Caps the upper dislay number at 99
   var num = count > 99 ? "99+" : count
   
-
+  var isRight = (circlePosition[0] === 'Right')
+  
 
   return (
     <div onClick={() => clickEvent()} style={{
@@ -55,7 +65,7 @@ export const ImageIcon: FC = () => {
       <div style={{
           position: "absolute",
           top: 0,
-          right: 0,
+          ...(isRight ? { right: 0 } : { left: 0 }),
           zIndex: 20,
           width: "25%",
           aspectRatio: "1 / 1",
