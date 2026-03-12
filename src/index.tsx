@@ -30,6 +30,8 @@ export const ImageIcon: FC = () => {
     name: 'count',
     initialValue: 5
   })
+  // Click Event
+  const clickEvent = Retool.useEventCallback({name: "click"})
 
 
   // Click Event
