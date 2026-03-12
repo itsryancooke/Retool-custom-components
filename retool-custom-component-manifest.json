@@ -19,6 +19,15 @@
           "type": "string"
         },
         {
+          "name": "Circle Position",
+          "initialValue": "Right",
+          "enumDefinition": [
+            "Left",
+            "Right"
+          ],
+          "type": "enumeration"
+        },
+        {
           "name": "count",
           "initialValue": 5,
           "type": "number"
